@@ -10,6 +10,7 @@ empowering users with insightful analytics for informed decision-making in the s
 # Features:
 
 Interactive Graphs ,
+Dark&light mode ,
 Company Details Display ,
 Real-time Updates , 
 Finnhub API Integration
