@@ -1,5 +1,5 @@
 
-const REACT_APP_API_KEY= "cnutsvpr01qub9j0242gcnutsvpr01qub9j02430" ;
+const REACT_APP_API_KEY= "" ;
 
 const basePath = "https://finnhub.io/api/v1";
 
