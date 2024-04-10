@@ -4,20 +4,32 @@ import { useState } from 'react';
 import { XIcon , SearchIcon } from '@heroicons/react/solid';
 import SearchResults from './SearchResults';
 import ThemeContext from '../Context/ThemeContext';
+import { searchSymbols } from '../api/stock-api';
+
 
 
 function Search() {
   const { darkMode } = useContext(ThemeContext);
   const [input, setInput] = useState("");
-  const [bestMatches, setBestMatches] = useState(mockSearchResults.result);
+  const [bestMatches, setBestMatches] = useState([]);
 
   const clear = () =>{
     setInput("");
     setBestMatches([]);
   }
 
-  const updateBestMatches =() => {
-    setBestMatches(mockSearchResults.result);
+  const updateBestMatches = async () => {
+   try{
+  if(input){
+    const searchResults = await searchSymbols(input);
+    const result = searchResults.result;
+    setBestMatches(result);
+  }
+   }
+   catch(error){
+    setBestMatches([]);
+    console.log(error);
+   }
   }
 
   return (
@@ -35,9 +47,10 @@ function Search() {
             setInput(event.target.value);
           }}
 
-          onKeyPress ={ (event)=>{
+         onKeyPress ={ (event)=>{
+            //console.log('Environment Variables:', import.meta.env.REACT_APP_API_KEY);
             if(event.key === "Enter"){
-                updateBestMatches()
+                updateBestMatches();
             }
           }}
 
