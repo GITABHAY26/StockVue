@@ -1,6 +1,6 @@
-# Stock_trading_Dashboard
+# StockVue [Stock_trading_Dashboard]
 
-This is my learning React-based frontend Dashboard project, coupled with Tailwind CSS, presents real-time stock trading data through dynamic graphs illustrating trends over time.
+This is my learning React-based Stock trading frontend Dashboard project, coupled with Tailwind CSS, presents real-time stock trading data through dynamic graphs illustrating trends over time.
 Users gain access to comprehensive company details alongside indicators of stock performance—whether up or down. 
 Leveraging React's core concepts such as state management, hooks, and context APIs,
 the dashboard ensures seamless user interaction and real-time updates. Integration with the Finnhub API enriches the dashboard with free data features, 
